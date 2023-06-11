@@ -1,4 +1,2 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get install -y nginx
-ADD index.html /var/www/html/
-CMD ["nginx","-g","daemon off;"]
+FROM php:7.3-apache
+RUN docker-php-ext-install pdo_mysql
